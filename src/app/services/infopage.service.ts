@@ -9,18 +9,30 @@ export class InfopageService {
 
   info: InfoPage = {};
   loaded = false;
+  team: any[] = [];
 
   constructor( private http: HttpClient ) {
 
     console.log('Servicio info pagina');
+    this.loadInfo();
+    this.loadTeam();
 
+  }
+
+  private loadInfo() {
     //Read
     this.http.get('assets/data/data-page.json')
       .subscribe( (resp: InfoPage) => {
         this.loaded = true;
         this.info = resp;
-        console.log(this.info.twitter);
       } );
+  }
 
+  private loadTeam() {
+    this.http.get('https://angular-website-6381b.firebaseio.com/team.json')
+    .subscribe( (resp: any[] ) => {
+      this.team = resp;
+      console.log(this.team);
+    } );
   }
 }
