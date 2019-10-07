@@ -32,7 +32,6 @@ export class InfopageService {
     this.http.get('https://angular-website-6381b.firebaseio.com/team.json')
     .subscribe( (resp: any[] ) => {
       this.team = resp;
-      console.log(this.team);
     } );
   }
 }

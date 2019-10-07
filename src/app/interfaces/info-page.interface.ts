@@ -1,7 +1,3 @@
-
-
-
-
 export interface InfoPage {
   title?: string;
   shortName?: string;
