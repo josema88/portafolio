@@ -46,7 +46,6 @@ export class ProductsService {
   }
 
   private filterProducts( term: string ) {
-    console.log(this.products);
     term = term.toLocaleLowerCase();
     this.productsFiltered = [];
     this.products.forEach( prod => {
