@@ -23,10 +23,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
       
-    - name: Node $
+    - name: Node 12.13.1
       uses: actions/setup-node@v1
       with:
-        node-version: $ 
+        node-version: 12.13.1 
     - name: npm install and npm run build
       run: |
         npm ci
